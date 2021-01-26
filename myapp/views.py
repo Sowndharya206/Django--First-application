@@ -26,5 +26,10 @@ def index3(request):
         'student':'rahul','course':'MCA'
         }
     return HttpResponse(template.render(name))
-    
-    
+def img(request):  
+    return render(request,'hai.html') 
+def jas1(request):
+    return render(request,'jas.html')  
+def colo(request):
+    return render(request,'color.html')  
+ 

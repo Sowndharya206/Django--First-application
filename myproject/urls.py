@@ -24,4 +24,7 @@ urlpatterns = [
     path('index2/',views.index1),
     path('show/',views.shows),
     path('index3/',views.index3),
+    path('img/',views.img),
+    path('jas/',views.jas1),
+    path('colr/',views.colo),
 ]
