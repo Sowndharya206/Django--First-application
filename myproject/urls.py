@@ -27,4 +27,5 @@ urlpatterns = [
     path('img/',views.img),
     path('jas/',views.jas1),
     path('colr/',views.colo),
+    path('but/',views.wrks),
 ]

@@ -32,4 +32,7 @@ def jas1(request):
     return render(request,'jas.html')  
 def colo(request):
     return render(request,'color.html')  
- 
+from myapp.form import wrkForm  
+def wrks(request):  
+    wor = wrkForm()  
+    return render(request,"button.html",{'form':wor})  
