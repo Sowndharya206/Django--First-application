@@ -41,6 +41,7 @@ def buttons(request):
     student = StudentForm()  
     return render(request,"button.html",{'form':student}) 
     #django validation
+
 def wrke(request):  
     if request.method == "POST":  
         form = wrkForm(request.POST)  
@@ -51,4 +52,14 @@ def wrke(request):
                 pass  
     else:  
         form = wrkForm()  
-    return render(request,'button.html',{'form':form})   
+    return render(request,'button.html',{'form':form}) 
+from myapp.functions.functions import handle_uploaded_file  
+def image(request):  
+    if request.method == 'POST':  
+        student = StudentForm(request.POST, request.FILES)  
+        if student.is_valid():  
+            handle_uploaded_file(request.FILES['file'])  
+            return HttpResponse("File uploaded successfuly")  
+    else:  
+        student = StudentForm()  
+        return render(request,"button.html",{'form':student})  

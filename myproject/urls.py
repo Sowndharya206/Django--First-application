@@ -30,5 +30,6 @@ urlpatterns = [
     path('but/',views.wrks),
     path('buttons/',views.buttons),
     path('but/',views.wrke),
+    path('image/',views.image),
 
 ]
