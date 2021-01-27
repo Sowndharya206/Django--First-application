@@ -36,3 +36,19 @@ from myapp.form import wrkForm
 def wrks(request):  
     wor = wrkForm()  
     return render(request,"button.html",{'form':wor})  
+from myapp.form import StudentForm  
+def buttons(request):  
+    student = StudentForm()  
+    return render(request,"button.html",{'form':student}) 
+    #django validation
+def wrke(request):  
+    if request.method == "POST":  
+        form = wrkForm(request.POST)  
+        if form.is_valid():  
+            try:  
+                return redirect('/')  
+            except:  
+                pass  
+    else:  
+        form = wrkForm()  
+    return render(request,'button.html',{'form':form})   
