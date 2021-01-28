@@ -33,5 +33,8 @@ urlpatterns = [
     path('image/',views.image),
     path('csv/',views.getfile),
     path('did/',views.done),
-    path('pdf',views.getpdf), 
+    path('pdf',views.getpdf),
+    path('cdf/',views.coco),
+    path('mail/',views.mail)
+
 ]
