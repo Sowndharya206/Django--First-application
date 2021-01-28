@@ -31,5 +31,7 @@ urlpatterns = [
     path('buttons/',views.buttons),
     path('but/',views.wrke),
     path('image/',views.image),
-
+    path('csv/',views.getfile),
+    path('did/',views.done),
+    path('pdf',views.getpdf), 
 ]

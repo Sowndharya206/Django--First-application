@@ -8,6 +8,7 @@ class workers(models.Model):
     mail_id=models.EmailField(max_length=30)
     entrydate = models.DateField()  
     age = models.IntegerField() 
-    contact = models.IntegerField()   
+    contact = models.IntegerField()  
+     
 class Meta:
     db_table="workers"

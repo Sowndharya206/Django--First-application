@@ -22,5 +22,8 @@ class Migration(migrations.Migration):
                 ('age', models.IntegerField()),
                 ('contact', models.IntegerField()),
             ],
+            options={  
+                'db_table': 'employee', 
+            },
         ),
     ]

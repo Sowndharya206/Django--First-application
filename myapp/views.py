@@ -63,3 +63,32 @@ def image(request):
     else:  
         student = StudentForm()  
         return render(request,"button.html",{'form':student})  
+import csv  
+def getfile(request):  
+    response = HttpResponse(content_type='text/csv')  
+    response['Content-Disposition'] = 'attachment; filename="file.csv"'  
+    writer = csv.writer(response)  
+    writer.writerow(['1001', 'shiridi', 'sairam', 'CA'])  
+    writer.writerow(['1002', 'padma', 'priya', 'LA', 'Testing'])   
+    return response 
+from myapp.models import workers      
+def done(request):  
+    response = HttpResponse(content_type='text/csv')  
+    response['Content-Disposition'] = 'attachment; filename="file.csv"'  
+    work = workers.objects.all()
+    writer = csv.writer(response)  
+    for works in work:  
+        writer.writerow([works.first_name,works.last_name,works.age,works.contact])  
+    return response  
+from reportlab.pdfgen import canvas  
+   
+  
+def getpdf(request):  
+    response = HttpResponse(content_type='application/pdf')  
+    response['Content-Disposition'] = 'attachment; filename="sai.pdf"'  
+    p = canvas.Canvas(response)  
+    p.setFont("Times-Roman", 55)  
+    p.drawString(100,700, "Hello, Javatpoint. All the best")  
+    p.showPage()  
+    p.save()  
+    return response  
