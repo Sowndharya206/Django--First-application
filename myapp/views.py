@@ -104,5 +104,5 @@ def mail(request):
     if(res == 1):  
         msg = "Mail Sent Successfuly"  
     else:  
-        msg = "Mail could not sent"  
+        msg = "Mail could not send"  
     return HttpResponse(msg)  
